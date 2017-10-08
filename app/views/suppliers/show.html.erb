@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @supplier.name %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @supplier.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @supplier.city %>
+</p>
+
+<h3>Contracts</h3>
+<% @supplier.contracts.each do |contract| %>
+  <div>
+    <p><%= contract.condition1 %></p>
+    <p><%= contract.condition2 %></p>
+    <p><%= contract.start_at %></p>
+    <p><%= contract.end_at %></p>
+    <br>
+    <p><%= link_to 'Delete', contract_path(contract), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  </div>
+<% end %>
+
+
+<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
+<%= link_to 'Back', suppliers_path %>

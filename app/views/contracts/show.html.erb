@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Supplier</h3>
+<p><%= @contract.supplier.name %>
+<br>
+
+<br>
+<br>
+<br>
+
+<p>
+  <strong>Year:</strong>
+  <%= @contract.year %>
+</p>
+
+<p>
+  <strong>Condition1:</strong>
+  <%= @contract.condition1 %>
+</p>
+
+<p>
+  <strong>Condition2:</strong>
+  <%= @contract.condition2 %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @contract.start_at %>
+</p>
+
+<p>
+  <strong>End at:</strong>
+  <%= @contract.end_at %>
+</p>
+
+<p>
+  <strong>document:</strong>
+  <%= link_to "Document", @contract.document_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_contract_path(@contract) %> |
+<%= link_to 'Back', contracts_path %>
